@@ -1,0 +1,19 @@
+  Geri yüklenecek projeler belirleniyor...
+  Geri yükleme için tüm projeler güncel.
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\AIGeneratorService.cs(51,51): error CS1061: 'OpenAIClient' bir 'AsChatClient' tanımı içermiyor ve 'OpenAIClient' türünde bir ilk bağımsız değişken kabul eden hiçbir erişilebilir 'AsChatClient' genişletme yöntemi bulunamadı (bir kullanma yönergeniz veya derleme başvurunuz eksik olabilir mi?) [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_u1oed4yu_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\AIGeneratorService.cs(62,49): error CS1061: 'IChatClient' bir 'CompleteAsync' tanımı içermiyor ve 'IChatClient' türünde bir ilk bağımsız değişken kabul eden hiçbir erişilebilir 'CompleteAsync' genişletme yöntemi bulunamadı (bir kullanma yönergeniz veya derleme başvurunuz eksik olabilir mi?) [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_u1oed4yu_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\AIGeneratorService.cs(68,61): error CS0023: '.' işleci 'void' türündeki işlenene uygulanamaz [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_u1oed4yu_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\E12ScraperService.cs(34,23): warning CS0612: 'IPage.WaitForNavigationAsync(PageWaitForNavigationOptions?)' artık kullanılmıyor [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_u1oed4yu_wpftmp.csproj]
+
+Oluşturma BAŞARISIZ OLDU.
+
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\E12ScraperService.cs(34,23): warning CS0612: 'IPage.WaitForNavigationAsync(PageWaitForNavigationOptions?)' artık kullanılmıyor [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_u1oed4yu_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\AIGeneratorService.cs(51,51): error CS1061: 'OpenAIClient' bir 'AsChatClient' tanımı içermiyor ve 'OpenAIClient' türünde bir ilk bağımsız değişken kabul eden hiçbir erişilebilir 'AsChatClient' genişletme yöntemi bulunamadı (bir kullanma yönergeniz veya derleme başvurunuz eksik olabilir mi?) [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_u1oed4yu_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\AIGeneratorService.cs(62,49): error CS1061: 'IChatClient' bir 'CompleteAsync' tanımı içermiyor ve 'IChatClient' türünde bir ilk bağımsız değişken kabul eden hiçbir erişilebilir 'CompleteAsync' genişletme yöntemi bulunamadı (bir kullanma yönergeniz veya derleme başvurunuz eksik olabilir mi?) [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_u1oed4yu_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\AIGeneratorService.cs(68,61): error CS0023: '.' işleci 'void' türündeki işlenene uygulanamaz [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_u1oed4yu_wpftmp.csproj]
+    1 Uyarı
+    3 Hata
+
+Geçen Süre 00:00:02.83
+
+İş yükü güncelleştirmeleri var. Daha fazla bilgi için `dotnet workload list` çalıştırın.

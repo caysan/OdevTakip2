@@ -1,0 +1,19 @@
+  Geri y├╝klenecek projeler belirleniyor...
+  Geri y├╝kleme i├ğin t├╝m projeler g├╝ncel.
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\AIGeneratorService.cs(51,51): error CS1061: 'OpenAIClient' bir 'AsChatClient' tan─▒m─▒ i├ğermiyor ve 'OpenAIClient' t├╝r├╝nde bir ilk ba─ş─▒ms─▒z de─şi┼şken kabul eden hi├ğbir eri┼şilebilir 'AsChatClient' geni┼şletme y├Ântemi bulunamad─▒ (bir kullanma y├Ânergeniz veya derleme ba┼şvurunuz eksik olabilir mi?) [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_g2idnrub_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\AIGeneratorService.cs(62,49): error CS1061: 'IChatClient' bir 'CompleteAsync' tan─▒m─▒ i├ğermiyor ve 'IChatClient' t├╝r├╝nde bir ilk ba─ş─▒ms─▒z de─şi┼şken kabul eden hi├ğbir eri┼şilebilir 'CompleteAsync' geni┼şletme y├Ântemi bulunamad─▒ (bir kullanma y├Ânergeniz veya derleme ba┼şvurunuz eksik olabilir mi?) [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_g2idnrub_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\AIGeneratorService.cs(68,61): error CS0023: '.' i┼şleci 'void' t├╝r├╝ndeki i┼şlenene uygulanamaz [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_g2idnrub_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\E12ScraperService.cs(34,23): warning CS0612: 'IPage.WaitForNavigationAsync(PageWaitForNavigationOptions?)' art─▒k kullan─▒lm─▒yor [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_g2idnrub_wpftmp.csproj]
+
+Olu┼şturma BA┼ŞARISIZ OLDU.
+
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\E12ScraperService.cs(34,23): warning CS0612: 'IPage.WaitForNavigationAsync(PageWaitForNavigationOptions?)' art─▒k kullan─▒lm─▒yor [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_g2idnrub_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\AIGeneratorService.cs(51,51): error CS1061: 'OpenAIClient' bir 'AsChatClient' tan─▒m─▒ i├ğermiyor ve 'OpenAIClient' t├╝r├╝nde bir ilk ba─ş─▒ms─▒z de─şi┼şken kabul eden hi├ğbir eri┼şilebilir 'AsChatClient' geni┼şletme y├Ântemi bulunamad─▒ (bir kullanma y├Ânergeniz veya derleme ba┼şvurunuz eksik olabilir mi?) [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_g2idnrub_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\AIGeneratorService.cs(62,49): error CS1061: 'IChatClient' bir 'CompleteAsync' tan─▒m─▒ i├ğermiyor ve 'IChatClient' t├╝r├╝nde bir ilk ba─ş─▒ms─▒z de─şi┼şken kabul eden hi├ğbir eri┼şilebilir 'CompleteAsync' geni┼şletme y├Ântemi bulunamad─▒ (bir kullanma y├Ânergeniz veya derleme ba┼şvurunuz eksik olabilir mi?) [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_g2idnrub_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\AIGeneratorService.cs(68,61): error CS0023: '.' i┼şleci 'void' t├╝r├╝ndeki i┼şlenene uygulanamaz [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_g2idnrub_wpftmp.csproj]
+    1 Uyar─▒
+    3 Hata
+
+Ge├ğen S├╝re 00:00:04.75
+
+─░┼ş y├╝k├╝ g├╝ncelle┼ştirmeleri var. Daha fazla bilgi i├ğin `dotnet workload list` ├ğal─▒┼şt─▒r─▒n.
