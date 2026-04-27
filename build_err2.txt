@@ -1,0 +1,21 @@
+  Geri yüklenecek projeler belirleniyor...
+  Geri yükleme için tüm projeler güncel.
+C:\Proje\Testler\OdevTakip2\OdevTakip2\MainWindow.xaml.cs(28,23): warning CS8600: Null sabit değeri veya olası null değeri, boş değer atanamaz türe dönüştürülüyor. [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_guvrsv23_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\WhatsAppScraperService.cs(26,23): warning CS8600: Null sabit değeri veya olası null değeri, boş değer atanamaz türe dönüştürülüyor. [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_guvrsv23_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\WhatsAppScraperService.cs(19,16): warning CS8618: Null atanamaz alan '_tessDataPath', oluşturucudan çıkış yaparken null olmayan bir değer içermelidir. 'Gerekli' değiştiricisini ekleyin veya alan değerini null atanabilir olarak bildirmeyi göz önünde bulundurun. [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_guvrsv23_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\MainWindow.xaml.cs(130,50): error CS1061: 'E12ScraperService' bir 'ScrapeAsync' tanımı içermiyor ve 'E12ScraperService' türünde bir ilk bağımsız değişken kabul eden hiçbir erişilebilir 'ScrapeAsync' genişletme yöntemi bulunamadı (bir kullanma yönergeniz veya derleme başvurunuz eksik olabilir mi?) [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_guvrsv23_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\MainWindow.xaml.cs(130,33): error CS4033: await' işleci yalnızca zaman uyumsuz bir yöntemle kullanılabilir. Bu yöntemi 'async' değiştiricisi ile işaretlemeyi ve dönüş türünü 'Task' olarak değiştirmeyi düşünün. [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_guvrsv23_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\WhatsAppScraperService.cs(17,33): warning CS0169: 'WhatsAppScraperService._tessDataPath' alanı hiçbir zaman kullanılmaz [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_guvrsv23_wpftmp.csproj]
+
+Oluşturma BAŞARISIZ OLDU.
+
+C:\Proje\Testler\OdevTakip2\OdevTakip2\MainWindow.xaml.cs(28,23): warning CS8600: Null sabit değeri veya olası null değeri, boş değer atanamaz türe dönüştürülüyor. [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_guvrsv23_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\WhatsAppScraperService.cs(26,23): warning CS8600: Null sabit değeri veya olası null değeri, boş değer atanamaz türe dönüştürülüyor. [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_guvrsv23_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\WhatsAppScraperService.cs(19,16): warning CS8618: Null atanamaz alan '_tessDataPath', oluşturucudan çıkış yaparken null olmayan bir değer içermelidir. 'Gerekli' değiştiricisini ekleyin veya alan değerini null atanabilir olarak bildirmeyi göz önünde bulundurun. [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_guvrsv23_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\Services\WhatsAppScraperService.cs(17,33): warning CS0169: 'WhatsAppScraperService._tessDataPath' alanı hiçbir zaman kullanılmaz [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_guvrsv23_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\MainWindow.xaml.cs(130,50): error CS1061: 'E12ScraperService' bir 'ScrapeAsync' tanımı içermiyor ve 'E12ScraperService' türünde bir ilk bağımsız değişken kabul eden hiçbir erişilebilir 'ScrapeAsync' genişletme yöntemi bulunamadı (bir kullanma yönergeniz veya derleme başvurunuz eksik olabilir mi?) [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_guvrsv23_wpftmp.csproj]
+C:\Proje\Testler\OdevTakip2\OdevTakip2\MainWindow.xaml.cs(130,33): error CS4033: await' işleci yalnızca zaman uyumsuz bir yöntemle kullanılabilir. Bu yöntemi 'async' değiştiricisi ile işaretlemeyi ve dönüş türünü 'Task' olarak değiştirmeyi düşünün. [C:\Proje\Testler\OdevTakip2\OdevTakip2\OdevTakip2_guvrsv23_wpftmp.csproj]
+    4 Uyarı
+    2 Hata
+
+Geçen Süre 00:00:06.32

@@ -1,0 +1,186 @@
+{
+  "data": {
+    "items": [
+      {
+        "id": "36a69c40-c4cd-4fcb-b9f9-5427dee8a923",
+        "studentID": "5e48bafd-aef9-455a-be24-4a5b7dd1a049",
+        "homeworkID": "c37c26f2-3ff4-4f98-a802-a2d6fd518e33",
+        "studentAnswer": "",
+        "studentAttachment": null,
+        "studentAnswerDate": null,
+        "teacherAnswer": "",
+        "teacherAttachment": null,
+        "teacherAnswerDate": null,
+        "score": null,
+        "scoreDate": null,
+        "homework": {
+          "id": "c37c26f2-3ff4-4f98-a802-a2d6fd518e33",
+          "title": "Atatürk ilkeleri ",
+          "description": "<p>Beceri temelli soru bankasından 4.ünite bitecek.</p>",
+          "file": null,
+          "solution": "",
+          "solutionPath": [],
+          "publishDate": "2026-03-30T14:01:00Z",
+          "dueDate": "2026-04-04T21:00:00Z",
+          "createdByName": "EDA AKKUŞ",
+          "lesson": {
+            "id": "25891259-2bfe-4bf6-a0e4-ff111a04dfcf",
+            "createdAt": "2025-05-23T06:05:26.599092Z",
+            "name": "LGS T.C. İnkılap Tarihi ve Atatürkçülük",
+            "description": "LGS T.C. İnkılap Tarihi ve Atatürkçülük",
+            "curriculumID": "df0a75c9-f959-4063-9e39-2a938e155e67",
+            "gradeID": "9a55f348-8ff8-4d5f-997e-467e0a67b8e6",
+            "specialtyID": "41302e49-dc61-4f02-b65c-1db9608f750c",
+            "coverImage": "",
+            "isActive": true
+          }
+        }
+      },
+      {
+        "id": "94280c99-b3c6-4191-bfb3-a0bf0a4ec28d",
+        "studentID": "5e48bafd-aef9-455a-be24-4a5b7dd1a049",
+        "homeworkID": "77edc813-0004-43b2-90e7-cffac1e5501d",
+        "studentAnswer": "",
+        "studentAttachment": null,
+        "studentAnswerDate": null,
+        "teacherAnswer": "",
+        "teacherAttachment": null,
+        "teacherAnswerDate": null,
+        "score": null,
+        "scoreDate": null,
+        "homework": {
+          "id": "77edc813-0004-43b2-90e7-cffac1e5501d",
+          "title": "8. Sınıf 25. Matematik Ödevi",
+          "description": "<p>3 Adım: Sayfa 292 - 309</p><p>Fenomen A: Sayfa 257 - 276</p>",
+          "file": null,
+          "solution": "",
+          "solutionPath": null,
+          "publishDate": "2026-03-30T06:39:00Z",
+          "dueDate": "2026-04-11T21:00:00Z",
+          "createdByName": "ÇAĞLAR KAYA",
+          "lesson": {
+            "id": "4195b38e-8eb0-4a71-af07-250107233247",
+            "createdAt": "2025-06-05T09:10:07.77817Z",
+            "name": "LGS Matematik",
+            "description": "LGS Matematik",
+            "curriculumID": "df0a75c9-f959-4063-9e39-2a938e155e67",
+            "gradeID": "9a55f348-8ff8-4d5f-997e-467e0a67b8e6",
+            "specialtyID": "19a9c217-6a1b-45a6-9796-555b49b3a9e0",
+            "coverImage": "",
+            "isActive": true
+          }
+        }
+      },
+      {
+        "id": "0fc7ed6d-0070-4c09-8e87-4e8294833066",
+        "studentID": "5e48bafd-aef9-455a-be24-4a5b7dd1a049",
+        "homeworkID": "4de4b433-223b-42a1-a0f9-29f499d4e32c",
+        "studentAnswer": "",
+        "studentAttachment": null,
+        "studentAnswerDate": null,
+        "teacherAnswer": "",
+        "teacherAttachment": null,
+        "teacherAnswerDate": null,
+        "score": null,
+        "scoreDate": null,
+        "homework": {
+          "id": "4de4b433-223b-42a1-a0f9-29f499d4e32c",
+          "title": "MİRAY SORU BANKASI ",
+          "description": "<p></p>",
+          "file": null,
+          "solution": "",
+          "solutionPath": [],
+          "publishDate": "2026-03-29T11:05:00Z",
+          "dueDate": "2026-04-04T21:00:00Z",
+          "createdByName": "FATOŞ KARAÇAY",
+          "lesson": {
+            "id": "e243c719-df65-4f4a-b6a5-e4cf5d93f729",
+            "createdAt": "2024-08-02T18:41:04.214551Z",
+            "name": "TÜRKÇE",
+            "description": "Söz Sanatlarını Öğrenelim.",
+            "curriculumID": "df0a75c9-f959-4063-9e39-2a938e155e67",
+            "gradeID": "9a55f348-8ff8-4d5f-997e-467e0a67b8e6",
+            "specialtyID": "9fff85f4-a91e-4405-bf98-82c0347f69c1",
+            "coverImage": "0e8d6976-373c-4cef-b3ac-012162c74b58.jpg",
+            "isActive": true
+          }
+        }
+      },
+      {
+        "id": "0ca09ac5-36dc-49ad-b57a-3d8d7205ba9e",
+        "studentID": "5e48bafd-aef9-455a-be24-4a5b7dd1a049",
+        "homeworkID": "15420d9f-f181-4b89-9839-3a9bbc546bea",
+        "studentAnswer": "",
+        "studentAttachment": null,
+        "studentAnswerDate": null,
+        "teacherAnswer": "",
+        "teacherAttachment": null,
+        "teacherAnswerDate": null,
+        "score": null,
+        "scoreDate": null,
+        "homework": {
+          "id": "15420d9f-f181-4b89-9839-3a9bbc546bea",
+          "title": "6.modül miray 6. Ünite",
+          "description": "<ol start=\"6\"><li><p>Modül tamamlanacak tüm sorular etkinlikler bitirilecek.</p></li></ol><p>Miray soru bankasından 6. Ünite bitirilecek.</p><p>Beceri temelli soru bankasından 6. Ünite bitirilecek.</p><p>İyi ve verimli çalışmalar</p><p></p>",
+          "file": null,
+          "solution": "",
+          "solutionPath": [],
+          "publishDate": "2026-03-29T09:45:00Z",
+          "dueDate": "2026-04-04T21:00:00Z",
+          "createdByName": "Veysel Özdemir",
+          "lesson": {
+            "id": "c65181e5-f478-48e8-9b9c-b0335820ac94",
+            "createdAt": "2024-08-02T18:41:04.21381Z",
+            "name": "FEN BİLİMLERİ",
+            "description": "Evren Bize Fısıldıyor.",
+            "curriculumID": "df0a75c9-f959-4063-9e39-2a938e155e67",
+            "gradeID": "9a55f348-8ff8-4d5f-997e-467e0a67b8e6",
+            "specialtyID": "ee889f1d-1713-4268-bcad-cf494972ce3d",
+            "coverImage": "c5811ba5-1637-48f7-ac04-8030b4fe4f40.png",
+            "isActive": true
+          }
+        }
+      },
+      {
+        "id": "ccbfd541-395b-48b5-8920-8abc985b5db5",
+        "studentID": "5e48bafd-aef9-455a-be24-4a5b7dd1a049",
+        "homeworkID": "475e2732-ce56-44f2-a614-a4ca8fdbaffe",
+        "studentAnswer": "",
+        "studentAttachment": null,
+        "studentAnswerDate": null,
+        "teacherAnswer": "",
+        "teacherAttachment": null,
+        "teacherAnswerDate": null,
+        "score": null,
+        "scoreDate": null,
+        "homework": {
+          "id": "475e2732-ce56-44f2-a614-a4ca8fdbaffe",
+          "title": "3 ADIM S.B. 4.ÜNİTE BİTECEK",
+          "description": "<p>3 ADIM S.B. 4.ÜNİTE BİTECEK</p>",
+          "file": null,
+          "solution": "",
+          "solutionPath": [],
+          "publishDate": "2026-03-23T14:06:00Z",
+          "dueDate": "2026-03-28T21:00:00Z",
+          "createdByName": "SENEM ÇELİK",
+          "lesson": {
+            "id": "3ce4ad21-e1a8-4d11-9bf0-af5d92386e1b",
+            "createdAt": "2024-08-02T18:41:04.214976Z",
+            "name": "DİN KÜLTÜRÜ VE AHLAK BİLGİSİ",
+            "description": "İnancını Keşfet!",
+            "curriculumID": "df0a75c9-f959-4063-9e39-2a938e155e67",
+            "gradeID": "9a55f348-8ff8-4d5f-997e-467e0a67b8e6",
+            "specialtyID": "0dc076f4-f4c8-4d50-97c2-b470e001b23e",
+            "coverImage": "0317e2fa-a067-4cb1-9123-4cecc6ecbb1e.jpg",
+            "isActive": true
+          }
+        }
+      }
+    ],
+    "page": 1,
+    "perPage": 5,
+    "pageCount": 23,
+    "totalCount": 114
+  },
+  "error": null
+}

@@ -1,33 +1,32 @@
-﻿<Window x:Class="OdevTakip2.MainWindow"
+<Window x:Class="OdevTakip2.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OdevTakip2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Ana Ekran - Ödev Takip" Height="450" Width="800">
     <Grid Margin="10">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="0,0,0,10">
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-                <Label Content="WhatsApp Grup Adı:" VerticalAlignment="Center" Width="130"/>
-                <TextBox x:Name="txtGroupName" Width="200" VerticalAlignment="Center" Text="Hedef Grup Adını Yazın"/>
-                <Button x:Name="btnStart" Content="WP Bot Başlat" Width="100" Margin="10,0,0,0" Click="BtnStart_Click"/>
-            </StackPanel>
-            
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Gemini API Key:" VerticalAlignment="Center" Width="130"/>
-                <TextBox x:Name="txtApiKey" Width="200" VerticalAlignment="Center" Text=""/>
-                <Button x:Name="btnGeneratePlan" Content="AI Plan Oluştur" Width="100" Margin="10,0,0,0" Click="BtnGeneratePlan_Click"/>
-            </StackPanel>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,5" HorizontalAlignment="Left">
+            <Button x:Name="btnSettings" Content="⚙ Ayarlar" Width="100" Height="35" Margin="5" Click="BtnSettings_Click"/>
+            <Button x:Name="btnStart" Content="WP Bot Başlat" Width="120" Height="35" Margin="5" Click="BtnStart_Click"/>
+            <Button x:Name="btnE12Start" Content="E12 İndir" Width="150" Height="35" Margin="5" Click="BtnE12Start_Click"/>
+            <Button x:Name="btnGeneratePlan" Content="AI Plan Oluştur" Width="120" Height="35" Margin="5" Click="BtnGeneratePlan_Click"/>
+            <Separator Width="1" Height="30" Margin="5,0" Background="#555"/>
+            <Button x:Name="btnRunAll" Content="▶ Tüm Ödevleri Çıkart" Width="150" Height="35" Margin="5"
+                    FontWeight="Bold" Background="#2E7D32" Foreground="White"
+                    Click="BtnRunAll_Click"/>
         </StackPanel>
 
-        <Label Grid.Row="1" Content="İşlem Logları:" FontWeight="Bold" Margin="0,0,0,5"/>
-        <ListBox x:Name="lstLogs" Grid.Row="2" Background="#1E1E1E" Foreground="LightGreen" FontFamily="Consolas" />
+        <TextBlock x:Name="txtLastScans" Grid.Row="1" FontSize="11" Foreground="#999" Margin="5,0,0,10" />
+        <Label Grid.Row="2" Content="İşlem Logları:" FontWeight="Bold" Margin="0,0,5,5"/>
+        <ListBox x:Name="lstLogs" Grid.Row="3" Background="#1E1E1E" Foreground="LightGreen" FontFamily="Consolas" />
     </Grid>
 </Window>
