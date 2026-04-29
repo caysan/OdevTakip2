@@ -292,6 +292,25 @@
                 </Grid>
             </TabItem>
 
+            <!-- ── Tab 6: Diğer Ayarlar ──────────────────────────────────── -->
+            <TabItem Header="Diğer Ayarlar">
+                <Grid Margin="8">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Row="0" TextWrapping="Wrap" Foreground="Gray" FontSize="12" Margin="0,0,0,10"
+                               Text="Whatsapp işlemleri cache'de kaldığı için, whatsapp grupları değişikliklerinde vb. durumlarda yansımayabiliyor. Bu durumda cache'i temizlemek için whatsapp'a yeniden giriş yapmak gerekiyor. Aşağıdaki buton, whatsapp login bilgilerini temizler (WhatsAppSession klasörünü siler)."/>
+                    
+                    <Button x:Name="btnClearWPCache" Grid.Row="1" Content="WhatsApp Cache Temizle" 
+                            Width="200" Height="30" HorizontalAlignment="Left" 
+                            Background="#FF3B3B" Foreground="White" FontWeight="Bold"
+                            Click="BtnClearWPCache_Click"/>
+                </Grid>
+            </TabItem>
+
         </TabControl>
 
         <Button x:Name="btnSave" Grid.Row="1" Content="Kaydet ve Kapat"

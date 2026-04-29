@@ -53,7 +53,8 @@ namespace OdevTakip2.Services
         {
             var totalResults = new List<HomeworkItem>();
             string mainFolderPath = Path.Combine(_downloadsDir, "WhatsApp");
-            if (Directory.Exists(mainFolderPath)) {
+            if (Directory.Exists(mainFolderPath))
+            {
                 try { Directory.Delete(mainFolderPath, true); } catch { }
             }
             Directory.CreateDirectory(mainFolderPath);
@@ -74,49 +75,115 @@ namespace OdevTakip2.Services
 
             await page.GotoAsync("https://web.whatsapp.com/", new PageGotoOptions { Timeout = 120000 });
 
+            // Yükleme ekranının (progress bar) kaybolmasını bekle
+            try
+            {
+                var progressBar = page.Locator("progress");
+                if (await progressBar.CountAsync() > 0)
+                {
+                    await progressBar.Last.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Hidden, Timeout = 180000 });
+                }
+            }
+            catch { }
+
+            // Kullanıcıyı uyaran ve müdahaleyi kısıtlayan görsel bir kalkan (overlay) ekle.
+            // Playwright'ın tıklamalarını engellememesi için pointer-events: none kullanıyoruz.
+            try
+            {
+                await page.AddStyleTagAsync(new PageAddStyleTagOptions
+                {
+                    Content = @"
+                        body::after {
+                            content: '⚠️ BOT İŞLEM YAPIYOR - LÜTFEN EKRANA DOKUNMAYIN ⚠️';
+                            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+                            background: rgba(0, 0, 0, 0.75);
+                            color: #ff3b3b; font-size: 32px; font-weight: bold;
+                            display: flex; justify-content: center; align-items: center;
+                            z-index: 2147483647; pointer-events: none; text-shadow: 2px 2px 4px #000;
+                            backdrop-filter: blur(2px);
+                            animation: pulse 2s infinite;
+                        }
+                        @keyframes pulse { 0% { opacity: 0.8; } 50% { opacity: 1; } 100% { opacity: 0.8; } }
+                    "
+                });
+            }
+            catch { }
+
+            // Ekstra başlangıç senkronizasyon payı (WhatsApp web arkaplanda senkronize olur)
+            await Task.Delay(10000);
+
             foreach (var group in groups)
             {
-                string groupName    = group.Name;
-                string instType     = group.InstitutionType;
-                string prefix       = SafePrefix(instType);
-                string safeGrpName  = string.Join("_", groupName.Split(Path.GetInvalidFileNameChars())).Replace(" ", "_");
-                string groupFolder  = Path.Combine(mainFolderPath, safeGrpName);
-                string docsFolder   = Path.Combine(groupFolder, "docs");
+                string groupName = group.Name;
+                string instType = group.InstitutionType;
+                string prefix = SafePrefix(instType);
+                string safeGrpName = string.Join("_", groupName.Split(Path.GetInvalidFileNameChars())).Replace(" ", "_");
+                string groupFolder = Path.Combine(mainFolderPath, safeGrpName);
+                string docsFolder = Path.Combine(groupFolder, "docs");
                 Directory.CreateDirectory(groupFolder);
                 Directory.CreateDirectory(docsFolder);
 
                 // Per-group dedup state
-                var seenSignatures   = new HashSet<string>();
-                var processedBlobs   = new HashSet<string>();
-                var groupResults     = new List<HomeworkItem>();
+                var seenSignatures = new HashSet<string>();
+                var processedBlobs = new HashSet<string>();
+                var groupResults = new List<HomeworkItem>();
 
                 try
                 {
                     var searchBox = "div[data-testid='chat-list-search'], #side input[type='text'], div[title='Arama kutusu']";
                     await page.WaitForSelectorAsync(searchBox, new PageWaitForSelectorOptions { Timeout = 180000 });
-                    await page.FillAsync(searchBox, "");
-                    await Task.Delay(500);
-                    await page.FillAsync(searchBox, groupName);
-                    await page.Keyboard.PressAsync("Enter");
-                    await Task.Delay(3000);
+
+                    bool groupFound = false;
+                    for (int retry = 0; retry < 5; retry++)
+                    {
+                        await page.FillAsync(searchBox, "");
+                        await Task.Delay(1000);
+                        await page.FillAsync(searchBox, groupName);
+                        await Task.Delay(3000); // Arama sonuçlarının listelenmesini bekle
+                        await page.Keyboard.PressAsync("Enter");
+
+                        // Grup açıldıktan sonra mesajların tam olarak yüklenmesi için bekle
+                        await Task.Delay(5000);
+
+                        // Grubun gerçekten açılıp açılmadığını başlık üzerinden kontrol et
+                        var headerTitle = await page.QuerySelectorAsync("header span[dir='auto']");
+                        if (headerTitle != null)
+                        {
+                            var openedName = await headerTitle.InnerTextAsync();
+                            if (openedName.Contains(groupName, StringComparison.OrdinalIgnoreCase))
+                            {
+                                groupFound = true;
+                                break;
+                            }
+                        }
+
+                        Console.WriteLine($"UYARI: '{groupName}' henüz tam yüklenmedi veya bulunamadı. Tekrar deneniyor... ({retry + 1}/5)");
+                        await Task.Delay(5000); // Senkronizasyon için 5 sn bekle ve tekrar dene
+                    }
+
+                    if (!groupFound)
+                    {
+                        Console.WriteLine($"HATA: '{groupName}' grubu bulunamadı veya senkronize olmadı. Atlanıyor.");
+                        continue;
+                    }
 
                     // Wait for sync if needed
                     try
                     {
-                        var syncLoc = page.Locator("text=/eski mesajlar senkronize|senkronize ediliyor|syncing older messages|ilerleme durumunu görmek için|click to see progress/i").First;
+                        var syncLoc = page.Locator("text=/eski mesajlar senkronize|senkronize ediliyor|syncing older messages|ilerleme durumunu görmek için|click to see progress|daha fazla mesaj|get older messages/i").First;
                         if (await syncLoc.IsVisibleAsync())
                         {
                             await syncLoc.ClickAsync();
-                            await syncLoc.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Hidden, Timeout = 180000 });
+                            await syncLoc.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Hidden, Timeout = 300000 }); // 5 dakikaya kadar bekle
                             await Task.Delay(3000);
                         }
                     }
                     catch { }
 
-                    DateTime today          = DateTime.Today;
-                    int daysSinceMonday     = (int)today.DayOfWeek - (int)DayOfWeek.Monday;
+                    DateTime today = DateTime.Today;
+                    int daysSinceMonday = (int)today.DayOfWeek - (int)DayOfWeek.Monday;
                     if (daysSinceMonday < 0) daysSinceMonday += 7;
-                    DateTime targetDate     = today.AddDays(-daysSinceMonday).AddDays(-7);
+                    DateTime targetDate = today.AddDays(-daysSinceMonday).AddDays(-7);
 
                     var panelHandle = await page.QuerySelectorAsync("div[data-tab='8'], div[role='region']");
 
@@ -126,9 +193,9 @@ namespace OdevTakip2.Services
                         await CollectVisibleMessages(page, groupName, instType, prefix,
                             docsFolder, targetDate, seenSignatures, processedBlobs, groupResults);
 
-                        bool reachedTarget  = false;
-                        int  sameCountTicks = 0;
-                        int  prevMsgCount   = 0;
+                        bool reachedTarget = false;
+                        int sameCountTicks = 0;
+                        int prevMsgCount = 0;
 
                         while (!reachedTarget)
                         {
@@ -215,10 +282,10 @@ namespace OdevTakip2.Services
                 // ── Parse timestamp ─────────────────────────────────────────
                 var hwItem = new HomeworkItem
                 {
-                    Source          = groupName,
+                    Source = groupName,
                     InstitutionType = institutionType,
-                    Timestamp       = DateTime.Now,
-                    Content         = ""
+                    Timestamp = DateTime.Now,
+                    Content = ""
                 };
 
                 var prePlainEl = await element.QuerySelectorAsync("div.copyable-text[data-pre-plain-text]");
@@ -230,7 +297,7 @@ namespace OdevTakip2.Services
                         var m = Regex.Match(ppt, @"\b(\d{1,2})[\./-](\d{1,2})[\./-](\d{2,4})\b");
                         if (m.Success && DateTime.TryParse(m.Value, out DateTime d))
                             hwItem.Timestamp = d;
-                            
+
                         var senderMatch = Regex.Match(ppt, @"\]\s*([^:]+):");
                         if (senderMatch.Success)
                             hwItem.Sender = senderMatch.Groups[1].Value.Trim();
@@ -305,9 +372,9 @@ namespace OdevTakip2.Services
 
                         if (!string.IsNullOrEmpty(base64Data) && base64Data.Contains(","))
                         {
-                            byte[] bytes    = Convert.FromBase64String(base64Data.Split(',')[1]);
+                            byte[] bytes = Convert.FromBase64String(base64Data.Split(',')[1]);
                             string fileName = $"{filePrefix}img_{DateTime.Now:MMdd_HHmmss}_{Guid.NewGuid().ToString()[..6]}.jpg";
-                            string absPath  = Path.Combine(docsFolder, fileName);
+                            string absPath = Path.Combine(docsFolder, fileName);
                             await File.WriteAllBytesAsync(absPath, bytes);
 
                             if (new FileInfo(absPath).Length > 200 * 1024 || !ImageAnalyzer.IsLikelyHomeworkPhoto(absPath))

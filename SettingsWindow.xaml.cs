@@ -391,6 +391,32 @@ namespace OdevTakip2
             catch { }
         }
 
+        // ── Other Settings ─────────────────────────────────────────────────────
+        private void BtnClearWPCache_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var result = MessageBox.Show("WhatsApp önbelleği silinecek ve yeniden QR kod okutmanız gerekecek. Onaylıyor musunuz?", "Onay", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                    string wpSessionPath = Path.Combine(_userFilesPath, "WhatsAppSession");
+                    if (Directory.Exists(wpSessionPath))
+                    {
+                        Directory.Delete(wpSessionPath, true);
+                        MessageBox.Show("WhatsApp önbelleği başarıyla temizlendi.", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Temizlenecek bir önbellek bulunamadı.", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Önbellek temizlenirken hata oluştu:\n{ex.Message}", "Hata", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
         // ── Save ───────────────────────────────────────────────────────────────
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
