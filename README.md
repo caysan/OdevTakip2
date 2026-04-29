@@ -4,7 +4,7 @@ Bu proje, öğrencilerin farklı platformlardan gelen ödevlerini, bildirimlerin
 
 Özellikle velilerin, çocuklarının ödevlerini takip etmelerini kolaylaştırmak amacıyla geliştirilmiştir. 
 
-<img width="1440" alt="WhatsApp Image 2026-04-29 at 23 38 38_825e34c5" src="https://github.com/mrdemirel/OdevTakip/assets/6998090/58389a3e-38a8-455b-99fd-f10028186d98">
+*Proje hemen hemen tamamen AI desteği ile oluşturulmuştur. *
 
 
 
